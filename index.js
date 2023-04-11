@@ -2,7 +2,7 @@
 const { truncate, write } = require('fs');
 const inquirer = require('inquirer');
 const { type } = require('os');
-const generateMarkdown = require("./utils/generateMarkdown.js");
+const generateMarkdown = require("./utils/generateFile.js");
 const writeFile = require('./utils/generateFile.js');
 
 // TODO: Create an array of questions for user input
@@ -156,8 +156,8 @@ const promptQuestions = () => {
 })
 .catch(err => {
     console.log(err);
-})
-}
+});
+};
 // Function call to initialize app
 function init() {
 promptQuestions()
