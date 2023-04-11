@@ -2,7 +2,7 @@
 const { truncate, write } = require('fs');
 const inquirer = require('inquirer');
 const { type } = require('os');
-const generateMarkdown = require("./utils/generateFile.js");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 const writeFile = require('./utils/generateFile.js');
 
 // TODO: Create an array of questions for user input
@@ -134,7 +134,7 @@ const promptQuestions = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'Please enter your email adress for people to contact you:',
+            message: 'Please enter your email address for people to contact you:',
             validate: emailInput => {
                 if (emailInput) {
                     return true;
@@ -152,7 +152,7 @@ const promptQuestions = () => {
     return generateMarkdown(data);
 })
 .then(pageMarkdown => {
-    return writeFile(pageMarkdown);
+    return writeFile('README.md', pageMarkdown);
 })
 .catch(err => {
     console.log(err);
@@ -160,7 +160,9 @@ const promptQuestions = () => {
 };
 // Function call to initialize app
 function init() {
+
 promptQuestions()
+
 }
 
 init();
