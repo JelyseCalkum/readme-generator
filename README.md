@@ -16,6 +16,12 @@ In the command line run,
 
 ##  Screenshots
 
+![Screenshot-1](https://user-images.githubusercontent.com/115381607/231297029-503d88e8-aacc-4b8a-a3b1-4f4f1a204913.png)
+
+
+![Screenshot-2](https://user-images.githubusercontent.com/115381607/231297060-c925d2f4-4e9e-404d-8bb4-7c44e944fbfe.png)
+
+
 ## License
 
 This project is licensed under the MIT license.
