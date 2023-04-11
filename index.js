@@ -1,11 +1,9 @@
-// TODO: Include packages needed for this application
 const { truncate, write } = require('fs');
 const inquirer = require('inquirer');
 const { type } = require('os');
 const generateMarkdown = require("./utils/generateMarkdown.js");
 const writeFile = require('./utils/generateFile.js');
 
-// TODO: Create an array of questions for user input
 const promptQuestions = () => {
     return inquirer.prompt([
         {
@@ -134,7 +132,7 @@ const promptQuestions = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'Please enter your email address for people to contact you:',
+            message: 'Please enter your email adress for people to contact you:',
             validate: emailInput => {
                 if (emailInput) {
                     return true;
@@ -146,23 +144,18 @@ const promptQuestions = () => {
         }
 
     ])
-
-// TODO: Create a function to write README file
-.then(data => {
-    return generateMarkdown(data);
-})
-.then(pageMarkdown => {
-    return writeFile('README.md', pageMarkdown);
-})
-.catch(err => {
-    console.log(err);
-});
-};
-// Function call to initialize app
+        .then(data => {
+            return generateMarkdown(data);
+        })
+        .then(pageMarkdown => {
+            return writeFile(pageMarkdown);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
 function init() {
-
-promptQuestions()
-
+    promptQuestions()
 }
 
 init();
